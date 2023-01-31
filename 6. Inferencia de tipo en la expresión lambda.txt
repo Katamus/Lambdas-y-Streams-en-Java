@@ -1,0 +1,16 @@
+public interface Function (){
+	public void accept(int entero, String cadena);
+}
+
+function f = (parametro, parametro2) -> system.out.println(parametro);
+
+MiClase obj = new MiClase();
+
+obj.metodo( (parametro, parametro2) -> system.out.println(parametro));
+
+//Clase Miclase
+public class MiClase{
+	public void metodo(Function parametro){
+		//Hace algo con el parametro
+	}
+}
