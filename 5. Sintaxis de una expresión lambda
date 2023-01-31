@@ -1,0 +1,45 @@
+parametros -> cuerpo
+
+public interface Ficticia {
+	public void aceptar(int valor);
+}
+
+Ficticia f = new Ficticia(){
+	@Override
+	public void aceptar(int valor, int valor2){
+		System.out.println("Hola mundo");
+		//cuerpo del método implementado aceptar
+	}
+}
+
+Ficticia f = () -> {
+	System.out.println("Hola mundo");
+}
+
+Ficticia f = (valor,valor2) -> System.out.println("Hola mundo"+ valor);
+Ficticia f = valor -> System.out.println("Hola mundo"+ valor);
+
+Ficticia f = (valor,valor2) -> valor /valor; //se prescinde del return;
+
+Ejemplo
+
+Tradicional
+
+public interface ActionListener{
+	public void ActionPerformed(ActionEvent event);
+}
+
+JButton button = new JButton("Hola");
+
+button.addActionListener(new ActionListener(){
+	@Override
+	public void ActionPerformed(ActionEvent event){
+		System.out.println("Hola");
+	}
+})
+
+Lambda
+
+button.addActionListener(
+	(event) -> System.out.println
+)
