@@ -7,6 +7,9 @@ public class Main {
     }
 
     private static CalculadoraLong create(){
-        return (x,y) -> x / y;
+        long var = 201;
+        // long x = 2; esto genera error por que ya esta declarada la variable x
+        // ya que aunque sea un metodo abstracto de una interfas comparte el mismo ambito o this o scope
+        return (x,y) -> x / y + var;
     }
 }
