@@ -42,6 +42,26 @@ public class Principal {
             System.out.println(empleado.getNombre());
         }
 
+        Funciones funciones = new Funciones();
+        for (Empleado empleado: empjove) {
+            double nuevosalario = funciones.incrementoSalario(
+                    empleado,
+                    10,
+                    (salario,incremento)-> salario +  (salario * (incremento/10))
+                    );
+            empleado.setSalario(nuevosalario);
+        }
+        System.out.println("Salarios actualizado en los jovenes ");
+        for (Empleado empleado: empjove) {
+            System.out.println("Nombre: "+empleado.getNombre() +
+                    " Salario: "+ empleado.getSalario());
+        }
+
+        List<Empleado> empjoMayo = evaluador.evaluarAlContrario(listaEmpleados,empleado -> empleado.getEdad() < 25);
+        System.out.println("Empleados Mayores : ");
+        for (Empleado empleado :empjoMayo ) {
+            System.out.println(empleado.getNombre());
+        }
     }
 
 }
