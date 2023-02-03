@@ -1,4 +1,4 @@
-package org.example.InterfazPredicateTest;
+package org.example.InterfazPredicate;
 
 import java.util.ArrayList;
 import java.util.List;
