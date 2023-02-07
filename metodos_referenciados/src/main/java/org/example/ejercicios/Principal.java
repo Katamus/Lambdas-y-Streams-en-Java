@@ -39,6 +39,9 @@ public class Principal {
         System.out.println("Personas ordenadas por nombre: ");
         personas.forEach(System.out::println);
 
+        //Metodos de instancia de un objeto arbitrario pero de un tipo en particular
+        Collections.sort(personas,Persona::compararPorEdad2);
+        //(per1,per2)->per1.compararPorEdad2(per2)
     }
 
 }

@@ -50,4 +50,8 @@ public class Persona {
     public static int compararPorEdad(Persona a, Persona b){
         return a.getEdad().compareTo(b.getEdad());
     }
+
+    public int compararPorEdad2(Persona a){
+        return this.getEdad().compareTo(a.getEdad());
+    }
 }
