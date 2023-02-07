@@ -1,6 +1,7 @@
 package org.example.ejercicios;
 
 import org.example.modelo.Persona;
+import org.example.utilerias.ProveedorComparaciones;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -31,6 +32,12 @@ public class Principal {
         Collections.sort(personas,Persona::compararPorEdad);
         System.out.println("Personas ordenadas por edad: ");
         personas.forEach(p-> System.out.println(p));
+
+        ProveedorComparaciones proveedorComparaciones = new ProveedorComparaciones();
+
+        Collections.sort(personas,proveedorComparaciones::comparaPorNombre);
+        System.out.println("Personas ordenadas por nombre: ");
+        personas.forEach(System.out::println);
 
     }
 
