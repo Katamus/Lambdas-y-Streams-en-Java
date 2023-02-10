@@ -1,9 +1,10 @@
 package org.example.pojo;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
-public class Empleado {
+public class Empleado implements Comparable<Empleado> {
 
     private Long id;
     private String nombre;
@@ -12,6 +13,12 @@ public class Empleado {
     private Genero genero;
 
     private int edad;
+
+    @Override
+    public int compareTo(Empleado o) {
+        return this.getNombre().compareTo(o.getNombre());
+    }
+
 
     public static enum Genero {
         HOMBRE,
