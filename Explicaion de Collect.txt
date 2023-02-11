@@ -1,0 +1,22 @@
+<R> R collect(Supplier<R> supplier, BiConsumer<R,? super T> accumulator, BiConsumer<R,R> combiner)
+
+<R,A> R collect(Collect<? super T,A,R> collector)
+
+supplier<ArrayList<String>> proveedor = ()-> new ArrayList<>();
+
+supplier<ArrayList<String>> proveedor = () = ArrayList::new;
+
+BiConsumer<ArrayList<String>, String> acumulador = (lista, str)->lista.add(str);
+
+BiConsumer<ArrayList<String>, String> acumulador = ArrayList::add;
+
+BiConsumer<ArrayList<String>, ArrayList<String>> combinador = (lista1, lista2)->lista.addAll(lista2);
+
+BiConsumer<ArrayList<String>, ArrayList<String>> combinador = ArrayList::addAll;
+
+collect(ArrayList:new,ArrayList::add,ArrayList::addAll);
+
+List<String> nombres = Empleado.empleados()
+                        .stream()
+                        .map(Empleado::getNombre)
+                        .collect(ArrayList::new,ArrayList:add,ArrayList::addAll);
